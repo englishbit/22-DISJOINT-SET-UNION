@@ -10,7 +10,7 @@ void filled(int n){
     }
 } 
 
-
+//logic for finding parent of a node
 int find(int u){
     int root=u;
     while(root!=parent[root]){
@@ -51,3 +51,4 @@ int main(){
     return 0;
 
 }
+
