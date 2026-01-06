@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+#define MAX 100000
+int parent[MAX];
+
+
+void filled(int n){
+    for(int i=0;i<n;i++){
+        parent[i]=i;
+    }
+} 
+
+
+int find(int u){
+    int root=u;
+    while(root!=parent[root]){
+        root=parent[root];
+    }
+    while(u!=root){
+        parent[u]=root;
+        u=parent[u];
+
+    }
+
+    return root;
+
+}
+
+
+void merge(int x,int y){
+    int parent_x=find(x);
+    int parent_y=find(y);
+    if(parent_x!=parent_y){
+        parent[parent_x]=parent_y;
+    }
+}
+int main(){
+
+    int n;
+    cin>>n;
+    filled(n);
+
+    int a,b,edge;
+    cin>>edge;
+    for(int i=0;i<edge;i++){
+        cin>>a>>b;
+        merge(a,b);
+    }
+    
+
+    return 0;
+}
