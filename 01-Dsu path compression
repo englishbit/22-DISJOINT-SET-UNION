@@ -3,7 +3,7 @@ using namespace std;
 #define MAX 100000
 int parent[MAX];
 
-
+//logic for filling parent array
 void filled(int n){
     for(int i=0;i<n;i++){
         parent[i]=i;
@@ -49,4 +49,5 @@ int main(){
     
 
     return 0;
+
 }
